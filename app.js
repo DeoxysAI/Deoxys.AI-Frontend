@@ -11,6 +11,12 @@ const outputBox = $('#outputBox')
 
 const txtLoader = document.getElementById("txtLoader");
 
+document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+  var fileName = document.getElementById("file").files[0].name;
+  var nextSibling = e.target.nextElementSibling
+  nextSibling.innerText = fileName
+})
+
 let modification;
 
 function myFunction(selected) {
@@ -123,14 +129,14 @@ ImgBtn.addEventListener('click', (e) => {
   fd.append('file', files);
 
   $.ajax({
-    url: `${baseUrl} / image / 1`,
+    url: `${baseUrl}/image`,
     type: 'post',
     data: fd,
     contentType: false,
     processData: false,
     success: function (fileName) {
       if (fileName) {
-        outputBox.html(`< img class= "card-img-top" src = "${baseUrl}/upload/${fileName}" > `)
+        outputBox.html(`< img class= "card-img-top" src = "${baseUrl}/stargan/resultImg/${fileName}" > `)
       }
 
     }
