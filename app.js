@@ -94,7 +94,7 @@ TextBtn.addEventListener("click", e => {
 		crossDomain: true,
 		success: function(response) {
 			outputBox.html(
-				`<p> RANDOMLY generated ${modification} by Deoxys.AI <br> ${response}</p>`
+				`<h3> RANDOMLY generated ${modification} by Deoxys.AI</h3> <br> <p>${response}</p>`
 			);
 			console.log(response);
 		},
