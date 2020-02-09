@@ -54,7 +54,7 @@ RandImgBtn.addEventListener("click", e => {
 		success: function(fileName) {
 			if (fileName) {
 				outputBox.html(
-					`<img class="card-img-top" src="${baseUrl}/upload/${fileName}">`
+					`<img class="card-img-top random-image" src="${baseUrl}/dcgan/resultImg/${fileName}">`
 				);
 			}
 		},
